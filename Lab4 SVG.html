@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Zadanie SVG - Wariant 14</title>
+</head>
+<body>
+
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="800" viewBox="0 0 1000 800">
+    <defs>
+        <g id="wheel">
+            <polygon points="50,0 45,22 31,39 11,49 -11,49 -31,39 -45,22 -50,0 -45,-22 -31,-39 -11,-49 11,-49 31,-39 45,-22" fill="none" stroke="black" stroke-width="2"/>
+            <line x1="-50" y1="0" x2="50" y2="0" stroke="black" stroke-width="1"/>
+            <line x1="-45" y1="-22" x2="45" y2="22" stroke="black" stroke-width="1"/>
+            <line x1="-31" y1="-39" x2="31" y2="39" stroke="black" stroke-width="1"/>
+            <line x1="-11" y1="-49" x2="11" y2="49" stroke="black" stroke-width="1"/>
+            <line x1="11" y1="-49" x2="-11" y2="49" stroke="black" stroke-width="1"/>
+            <line x1="31" y1="-39" x2="-31" y2="39" stroke="black" stroke-width="1"/>
+            <line x1="45" y1="-22" x2="-45" y2="22" stroke="black" stroke-width="1"/>
+            <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="4s" repeatCount="indefinite"/>
+        </g>
+
+        <g id="seesaw_arm">
+            <rect x="-150" y="-8" width="300" height="16" fill="red"/>
+            <use xlink:href="#wheel" x="-150" y="0"/>
+            <use xlink:href="#wheel" x="150" y="0"/>
+            <rect x="-158" y="-8" width="16" height="16" fill="red"/>
+            <rect x="142" y="-8" width="16" height="16" fill="red"/>
+        </g>
+    </defs>
+
+    <g transform="translate(250, 300) scale(0.8)">
+        <polygon points="0,0 -35,220 35,220" fill="purple"/>
+        <g transform="rotate(15)">
+            <use xlink:href="#seesaw_arm" x="0" y="0"/>
+        </g>
+    </g>
+
+    <g transform="translate(550, 550) scale(1.1)">
+        <polygon points="0,0 -35,220 35,220" fill="blue"/>
+        <g transform="rotate(-15)">
+            <use xlink:href="#seesaw_arm" x="0" y="0"/>
+        </g>
+    </g>
+
+    <g transform="translate(800, 200) scale(0.6)">
+        <polygon points="0,0 -35,220 35,220" fill="green"/>
+        <g transform="rotate(20)">
+            <use xlink:href="#seesaw_arm" x="0" y="0"/>
+        </g>
+    </g>
+</svg>
+
+</body>
+</html>
